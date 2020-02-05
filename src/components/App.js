@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  fetch("https://www.songsterr.com/a/ra/songs.json?pattern=beatles")
+  const [value, setValue] = useState("");
+
+  fetch(`https://www.songsterr.com/a/ra/songs.json?pattern=${value}`)
     .then(response => {
       if (response.ok) return response;
       throw Error("something gone wrong");
@@ -13,10 +15,18 @@ function App() {
       console.log(err);
     });
 
+  const handleInput = e => {
+    setValue(e.target.value);
+  };
   return (
     <div className="App">
       <form action="submit">
-        <input type="text" placeholder="title or artist" />
+        <input
+          type="text"
+          placeholder="title or artist"
+          value={value}
+          onChange={handleInput}
+        />
         <button>search</button>
       </form>
       <p>hello world</p>
