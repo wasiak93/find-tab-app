@@ -1,0 +1,7 @@
+.item {
+  list-style: none;
+}
+
+.item:nth-child(odd) {
+  background-color: bisque;
+}

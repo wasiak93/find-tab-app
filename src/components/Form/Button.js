@@ -7,7 +7,7 @@ const Button = ({ click, id, name, active }) => {
       className={active ? "active__button button__tab" : "button__tab"}
       onClick={() => click(id)}
     >
-      {name} {id}
+      {name}
     </button>
   );
 };

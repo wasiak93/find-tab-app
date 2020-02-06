@@ -10,7 +10,7 @@ class App extends Component {
     isActive: [
       { id: 0, name: "chords", active: false },
       { id: 1, name: "bass", active: false },
-      { id: 2, name: "guitar", active: true },
+      { id: 2, name: "guitar", active: false },
       { id: 3, name: "player", active: false }
     ]
   };
@@ -67,7 +67,7 @@ class App extends Component {
           buttonsActive={this.state.isActive}
           click={this.handleTabButton}
         />
-        <Result data={this.state.data} />
+        {this.state.data.length >= 1 ? <Result data={this.state.data} /> : null}
       </div>
     );
   }
