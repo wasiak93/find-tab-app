@@ -1,17 +1,10 @@
 import React from "react";
 import "./ListItem.css";
+import Tab from "./Tab";
 
 const ListItem = ({ title, artist, tabTypes }) => {
-  const tab = tabTypes.map(item => (
-    <p className="item__tab" key={item}>
-      Tab:{" "}
-      {item === "TEXT_GUITAR_TAB"
-        ? "GUITAR"
-        : item === "TEXT_BASS_TAB"
-        ? "BASS"
-        : item}
-    </p>
-  ));
+  console.log(tabTypes);
+  const tab = tabTypes.map(item => <Tab key={item} item={item} />);
 
   return (
     <li className="item">
