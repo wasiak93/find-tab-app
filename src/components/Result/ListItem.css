@@ -3,16 +3,26 @@
 }
 
 .list__item:nth-child(odd) {
-  background-color: bisque;
+  /* background-color: bisque;
+   */
+  background-color: rgb(230, 230, 230);
 }
 
 .list__item:nth-child(even) {
-  background-color: rgb(246, 198, 138);
+  /* background-color: rgb(246, 198, 138);
+   */
+  background-color: white;
 }
 
 .song {
   display: grid;
   grid-template-columns: 1fr minmax(100px, 250px) minmax(100px, 250px) 1fr;
+  padding-top: 5px;
+
+}
+
+.song p {
+  color: black
 }
 
 .song__artist,
@@ -34,5 +44,5 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   font-size: 12px;
-  margin-bottom: 5px;
+  padding-bottom: 5px;
 }

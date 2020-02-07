@@ -9,8 +9,9 @@ html {
 }
 
 body {
-  background: #f6deab;
+  background: #eeeee0;
   height: 100%;
+  font-family: sans-serif;
 }
 
 .wrapper {
@@ -26,7 +27,7 @@ p {
 }
 
 button {
-  background-color: rgba(134, 80, 14, 0.2);
+  background-color: #e0d0e9;
   outline: none;
   border: none;
   border-radius: 10px;
@@ -38,7 +39,7 @@ button {
 }
 
 button:hover {
-  background-color: rgba(85, 85, 85, 0.3);
+  background-color: #eceae1;
   transition: .3s;
 
 }
