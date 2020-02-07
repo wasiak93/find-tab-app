@@ -1,10 +1,10 @@
 import React from "react";
 import List from "./List";
 
-const Result = ({ data }) => {
+const Result = ({ data, activeTasks }) => {
   return (
     <div className="result">
-      <List data={data} />
+      <List data={data} activeTasks={activeTasks} />
     </div>
   );
 };

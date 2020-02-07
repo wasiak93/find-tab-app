@@ -8,11 +8,12 @@ class App extends Component {
     value: "",
     data: "",
     isActive: [
-      { id: 0, name: "chords", active: false },
-      { id: 1, name: "bass", active: false },
-      { id: 2, name: "guitar", active: false },
-      { id: 3, name: "player", active: false }
-    ]
+      { id: 0, name: "CHORDS", active: false },
+      { id: 1, name: "TEXT_BASS_TAB", active: false },
+      { id: 2, name: "TEXT_GUITAR_TAB", active: false },
+      { id: 3, name: "PLAYER", active: false }
+    ],
+    activeTasks: []
   };
 
   handleInputChange = e => {
@@ -43,7 +44,8 @@ class App extends Component {
   };
 
   handleTabButton = id => {
-    const tabs = [];
+    let tabs = [];
+    let activeTasks = [];
 
     this.state.isActive.map(item =>
       tabs.push({
@@ -52,8 +54,14 @@ class App extends Component {
         active: item.id === id ? !item.active : item.active
       })
     );
+
+    // tabs.map(item => (item.active === true ? console.log(item) : null));
+    tabs.map(item =>
+      item.active === true ? activeTasks.push(item.name) : null
+    );
     this.setState({
-      isActive: tabs
+      isActive: tabs,
+      activeTasks
     });
   };
   render() {
@@ -67,7 +75,9 @@ class App extends Component {
           buttonsActive={this.state.isActive}
           click={this.handleTabButton}
         />
-        {this.state.data.length >= 1 ? <Result data={this.state.data} /> : null}
+        {this.state.data.length >= 1 ? (
+          <Result data={this.state.data} activeTasks={this.state.activeTasks} />
+        ) : null}
       </div>
     );
   }
