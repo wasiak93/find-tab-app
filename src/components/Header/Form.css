@@ -6,7 +6,9 @@
 }
 
 .form__search {
-  width: 120px;
-  padding: 7px 20px;
-  text-transform: uppercase;
+  width: auto;
+  padding: 5px 10px;
+  background-color: white;
+  border: solid black 1px;
+  font-size: 12px;
 }

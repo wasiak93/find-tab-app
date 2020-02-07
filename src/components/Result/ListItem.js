@@ -1,25 +1,25 @@
 import React from "react";
 import "./ListItem.css";
 import Tab from "./Tab";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMicrophone, faMusic } from "@fortawesome/free-solid-svg-icons";
 
 const ListItem = ({ activeTasks, title, artist, tabTypes }) => {
-  // console.log(tabTypes);
   const tabs = tabTypes.map(item => (
     <Tab key={item} item={item} activeTasks={activeTasks} />
   ));
-  // const tabs = tabTypes.map(item =>
-  //   activeTasks.map(tab =>
-  //     tab.name === item ? (
-  //       <Tab key={item} item={item} activeTasks={activeTasks} />
-  //     ) : null
-  //   )
-  // );
-
   return (
-    <li className="item">
-      <p className="item__artist">Artist: {artist.name}</p>
-      <p className="item__title">Title: {title}</p>
-      {tabs}
+    <li className="list__item">
+      <div className="song">
+        <p className="song__artist">
+          <FontAwesomeIcon icon={faMicrophone} className="icon" />
+          {artist.name}
+        </p>
+        <p className="song__title">
+          <FontAwesomeIcon icon={faMusic} className="icon" /> {title}
+        </p>
+      </div>
+      <div className="item__tabs">{tabs}</div>
     </li>
   );
 };

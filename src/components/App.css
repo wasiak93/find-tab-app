@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background-color: grey;
+  background: #f6deab;
   height: 100%;
 }
 
@@ -26,7 +26,7 @@ p {
 }
 
 button {
-  background-color: white;
+  background-color: rgba(134, 80, 14, 0.2);
   outline: none;
   border: none;
   border-radius: 10px;
@@ -38,7 +38,16 @@ button {
 }
 
 button:hover {
-  background-color: cadetblue;
+  background-color: rgba(85, 85, 85, 0.3);
   transition: .3s;
 
+}
+
+.icon {
+  color: rgba(136, 136, 136, 0.5);
+  margin-right: 5px;
+}
+
+p {
+  color: #555
 }

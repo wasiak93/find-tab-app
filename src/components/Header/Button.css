@@ -1,8 +1,10 @@
 .active__button,
 .active__button:hover {
-  background-color: blue;
+  background-color: rgba(182, 145, 101, 0.9)
 }
 
 .active__button {
-  color: white
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
 }
