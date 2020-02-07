@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Form from "./Form/Form";
+import Header from "./Header/Header";
 import Result from "./Result/Result";
 
 class App extends Component {
@@ -8,10 +8,10 @@ class App extends Component {
     value: "",
     data: "",
     isActive: [
-      { id: 0, name: "CHORDS", active: false },
-      { id: 1, name: "TEXT_BASS_TAB", active: false },
-      { id: 2, name: "TEXT_GUITAR_TAB", active: false },
-      { id: 3, name: "PLAYER", active: false }
+      { id: 0, name: "CHORDS", view: "chords", active: false },
+      { id: 1, name: "TEXT_BASS_TAB", view: "bass", active: false },
+      { id: 2, name: "TEXT_GUITAR_TAB", view: "guitar", active: false },
+      { id: 3, name: "PLAYER", view: "player", active: false }
     ],
     activeTasks: []
   };
@@ -51,6 +51,7 @@ class App extends Component {
       tabs.push({
         id: item.id,
         name: item.name,
+        view: item.view,
         active: item.id === id ? !item.active : item.active
       })
     );
@@ -66,12 +67,11 @@ class App extends Component {
   };
   render() {
     return (
-      <div className="container">
-        <Form
+      <div className="wrapper">
+        <Header
           change={this.handleInputChange}
           search={this.handleForm}
           value={this.state.value}
-          data={this.state.data}
           buttonsActive={this.state.isActive}
           click={this.handleTabButton}
         />

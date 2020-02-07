@@ -1,0 +1,12 @@
+.header__form {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__search {
+  width: 120px;
+  padding: 7px 20px;
+  text-transform: uppercase;
+}

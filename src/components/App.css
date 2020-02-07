@@ -4,11 +4,41 @@
   box-sizing: border-box;
 }
 
-.container {
-  width: 90%;
+html {
+  height: 100%;
+}
+
+body {
+  background-color: grey;
+  height: 100%;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  width: 95%;
+  max-width: 840px;
   margin: auto;
 }
 
 p {
   text-align: center;
+}
+
+button {
+  background-color: white;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin: 10px 10px;
+  width: 100px;
+  box-shadow: 3px 3px 8px 0px #ccc;
+}
+
+button:hover {
+  background-color: cadetblue;
+  transition: .3s;
+
 }
