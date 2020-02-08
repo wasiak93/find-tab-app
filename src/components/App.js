@@ -7,13 +7,13 @@ class App extends Component {
   state = {
     value: "",
     data: "",
-    isActive: [
-      { id: 0, name: "CHORDS", view: "chords", active: false },
-      { id: 1, name: "TEXT_BASS_TAB", view: "bass", active: false },
-      { id: 2, name: "TEXT_GUITAR_TAB", view: "guitar", active: false },
-      { id: 3, name: "PLAYER", view: "player", active: false }
+    isSelected: [
+      { id: 0, name: "PLAYER", view: "player", selected: false },
+      { id: 1, name: "TEXT_GUITAR_TAB", view: "guitar", selected: false },
+      { id: 2, name: "CHORDS", view: "chords", selected: false },
+      { id: 3, name: "TEXT_BASS_TAB", view: "bass", selected: false }
     ],
-    activeTasks: [],
+    selectedTabs: [],
     searchResult: ""
   };
 
@@ -49,23 +49,23 @@ class App extends Component {
 
   handleTabButton = id => {
     let tabs = [];
-    let activeTasks = [];
+    let selectedTabs = [];
 
-    this.state.isActive.map(item =>
+    this.state.isSelected.map(item =>
       tabs.push({
         id: item.id,
         name: item.name,
         view: item.view,
-        active: item.id === id ? !item.active : item.active
+        selected: item.id === id ? !item.selected : item.selected
       })
     );
 
     tabs.map(item =>
-      item.active === true ? activeTasks.push(item.name) : null
+      item.selected === true ? selectedTabs.push(item.name) : null
     );
     this.setState({
-      isActive: tabs,
-      activeTasks
+      isSelected: tabs,
+      selectedTabs
     });
   };
   render() {
@@ -75,13 +75,13 @@ class App extends Component {
           change={this.handleInputChange}
           search={this.handleForm}
           value={this.state.value}
-          buttonsActive={this.state.isActive}
+          selectedButtons={this.state.isSelected}
           click={this.handleTabButton}
         />
 
         <Result
           data={this.state.data}
-          activeTasks={this.state.activeTasks}
+          selectedTabs={this.state.selectedTabs}
           result={this.state.searchResult}
         />
       </div>

@@ -1,10 +1,10 @@
 import React from "react";
 import "./Button.css";
 
-const Button = ({ click, id, name, active, view }) => {
+const Button = ({ click, id, selected, view }) => {
   return (
     <button
-      className={active ? "active__button button__tab" : "button__tab"}
+      className={selected ? "active__button button__tab" : "button__tab"}
       onClick={() => click(id)}
     >
       {view}
