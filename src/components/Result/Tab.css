@@ -1,5 +1,12 @@
 .tab {
   margin-bottom: 5px;
   text-align: center;
+  color: #555;
+  text-decoration: none;
+}
 
+.tab:hover {
+  color: rgba(20, 20, 20);
+  transition: .3s;
+  text-decoration: underline;
 }
