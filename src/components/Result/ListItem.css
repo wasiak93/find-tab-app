@@ -3,14 +3,10 @@
 }
 
 .list__item:nth-child(odd) {
-  /* background-color: bisque;
-   */
   background-color: rgb(230, 230, 230);
 }
 
 .list__item:nth-child(even) {
-  /* background-color: rgb(246, 198, 138);
-   */
   background-color: white;
 }
 

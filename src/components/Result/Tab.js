@@ -4,7 +4,6 @@ import { faGuitar } from "@fortawesome/free-solid-svg-icons";
 import "./Tab.css";
 
 const Tab = ({ item }) => {
-  console.log(item);
   return (
     <p className="tab">
       <FontAwesomeIcon icon={faGuitar} className="icon" />

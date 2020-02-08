@@ -1,11 +1,18 @@
 import React from "react";
 import List from "./List";
 
-const Result = ({ data, activeTasks }) => {
+const Result = ({ data, activeTasks, result }) => {
   return (
-    <div className="result">
-      <List data={data} activeTasks={activeTasks} />
-    </div>
+    <>
+      {data.length >= 1 ? (
+        <div className="result">
+          <h1>Results for: "{result}"</h1>
+          <List data={data} activeTasks={activeTasks} />
+        </div>
+      ) : result.length >= 1 ? (
+        <h1> Sorry we don't have "{result}" in our database</h1>
+      ) : null}
+    </>
   );
 };
 

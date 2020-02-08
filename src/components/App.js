@@ -13,7 +13,8 @@ class App extends Component {
       { id: 2, name: "TEXT_GUITAR_TAB", view: "guitar", active: false },
       { id: 3, name: "PLAYER", view: "player", active: false }
     ],
-    activeTasks: []
+    activeTasks: [],
+    searchResult: ""
   };
 
   handleInputChange = e => {
@@ -41,6 +42,9 @@ class App extends Component {
       .catch(err => {
         console.log(err);
       });
+    this.setState({
+      searchResult: this.state.value
+    });
   };
 
   handleTabButton = id => {
@@ -56,7 +60,6 @@ class App extends Component {
       })
     );
 
-    // tabs.map(item => (item.active === true ? console.log(item) : null));
     tabs.map(item =>
       item.active === true ? activeTasks.push(item.name) : null
     );
@@ -75,9 +78,12 @@ class App extends Component {
           buttonsActive={this.state.isActive}
           click={this.handleTabButton}
         />
-        {this.state.data.length >= 1 ? (
-          <Result data={this.state.data} activeTasks={this.state.activeTasks} />
-        ) : null}
+
+        <Result
+          data={this.state.data}
+          activeTasks={this.state.activeTasks}
+          result={this.state.searchResult}
+        />
       </div>
     );
   }
