@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background: white;
+  background-color: #F9F9FA;
   height: 100%;
   font-family: "Roboto";
 }
@@ -30,7 +30,7 @@ p {
 }
 
 button {
-  background-color: #e0d0e9;
+  background-color: rgba(119, 190, 246, .3);
   outline: none;
   border: none;
   border-radius: 10px;

@@ -1,9 +1,8 @@
 .active__button,
 .active__button:hover {
-  background-color: #833ab4;
+  background-color: rgba(7, 140, 244, .7);
 }
 
 .active__button {
-  color: white;
   font-weight: bold;
 }
