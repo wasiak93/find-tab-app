@@ -18,10 +18,10 @@ class App extends Component {
   };
 
   convertTabs = tabs => {
-    return tabs.map(t => {
-      if (t.includes("_")) {
-        return t.split("_")[1];
-      } else return t;
+    return tabs.map(tab => {
+      if (tab.includes("_")) {
+        return tab.split("_")[1];
+      } else return tab;
     });
   };
 

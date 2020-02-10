@@ -10,6 +10,8 @@ const Tab = ({ item, title, artist }) => {
         artist.name
       }&track=bass&inst=${item.toLowerCase()}`}
       className="tab"
+      target="_blank"
+      rel="noopener noreferrer"
     >
       <FontAwesomeIcon icon={faGuitar} className="icon" />
       {item}

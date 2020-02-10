@@ -30,10 +30,13 @@ const List = ({ data, selectedTabs, result, convert }) => {
   return (
     <div className="result">
       <h1>
-        Results for: "{result}" ({number})
+        {number === 0
+          ? "No results for:"
+          : `Result${number === 1 ? "" : "s"} for:`}
+        "{result}" ({number})
       </h1>
       <p className="result__acapit">
-        And tabs:
+        And for {selectedTabs.length === 1 ? "tab" : "tabs"}:
         {selectedTabs.length === 0
           ? " player, guitar, chords, bass"
           : ` ${selectedTabsText}`}

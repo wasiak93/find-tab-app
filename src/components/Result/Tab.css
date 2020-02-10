@@ -3,6 +3,7 @@
   text-align: center;
   color: #555;
   text-decoration: none;
+  outline: none;
 }
 
 .tab:hover {
