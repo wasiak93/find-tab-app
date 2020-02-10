@@ -3,14 +3,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .form__search {
   width: auto;
-  padding: 5px 10px;
+  padding: 2px 5px;
   background-color: white;
   border: solid 1px rgb(120, 120, 120);
-
-  font-size: 12px;
+  line-height: 1.5;
+  font-size: 16px;
   border-radius: 5px;
 }

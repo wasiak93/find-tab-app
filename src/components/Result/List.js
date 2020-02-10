@@ -31,7 +31,7 @@ const List = ({ data, selectedTabs, result, convert }) => {
     <div className="result">
       <h1>
         {number === 0
-          ? `No results for: ${result} `
+          ? `No results for: "${result}" `
           : `Result${number === 1 ? "" : "s"} for:  "${result}" (${number})`}
       </h1>
       {selectedTabs.length >= 1 ? (

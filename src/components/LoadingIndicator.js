@@ -8,7 +8,7 @@ const LoadingIndicator = props => {
   return (
     promiseInProgress && (
       <div className="loader">
-        <Loader type="ThreeDots" />
+        <Loader type="ThreeDots" color="rgba(119, 190, 246, 0.3)" />
       </div>
     )
   );
