@@ -64,3 +64,8 @@ h1 {
   color: #555;
   font-size: 24px;
 }
+
+.result__acapit {
+  text-align: center;
+  margin-bottom: 10px;
+}

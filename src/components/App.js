@@ -8,10 +8,10 @@ class App extends Component {
     value: "",
     data: "",
     isSelected: [
-      { id: 0, name: "PLAYER", view: "player", selected: false },
-      { id: 1, name: "GUITAR", view: "guitar", selected: false },
-      { id: 2, name: "CHORDS", view: "chords", selected: false },
-      { id: 3, name: "BASS", view: "bass", selected: false }
+      { id: 0, name: "PLAYER", selected: false },
+      { id: 1, name: "GUITAR", selected: false },
+      { id: 2, name: "CHORDS", selected: false },
+      { id: 3, name: "BASS", selected: false }
     ],
     selectedTabs: [],
     searchResult: ""

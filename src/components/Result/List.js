@@ -3,6 +3,8 @@ import ListItem from "./ListItem";
 
 const List = ({ data, selectedTabs, result, convert }) => {
   let number = 0;
+  let selectedTabsText = [];
+  selectedTabs.forEach(tab => selectedTabsText.push(` ${tab.toLowerCase()}`));
 
   const items = data.map(item => {
     item.tabTypes = convert(item.tabTypes);
@@ -27,11 +29,15 @@ const List = ({ data, selectedTabs, result, convert }) => {
 
   return (
     <div className="result">
-      {" "}
       <h1>
         Results for: "{result}" ({number})
       </h1>
-      {selectedTabs.length >= 1 ? <p>And tabs: {selectedTabs}</p> : null}
+      <p className="result__acapit">
+        And tabs:
+        {selectedTabs.length === 0
+          ? " player, guitar, chords, bass"
+          : ` ${selectedTabsText}`}
+      </p>
       <ul>{items}</ul>
     </div>
   );
