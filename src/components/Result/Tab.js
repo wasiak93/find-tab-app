@@ -8,21 +8,11 @@ const Tab = ({ item, title, artist }) => {
     <a
       href={`http://www.songsterr.com/a/wa/bestMatchForQueryString?s=${title}&a=${
         artist.name
-      }&track=bass&inst=${
-        item === "TEXT_GUITAR_TAB"
-          ? "guitar"
-          : item === "TEXT_BASS_TAB"
-          ? "bass"
-          : item.toLowerCase()
-      }`}
+      }&track=bass&inst=${item.toLowerCase()}`}
       className="tab"
     >
       <FontAwesomeIcon icon={faGuitar} className="icon" />
-      {item === "TEXT_GUITAR_TAB"
-        ? "GUITAR"
-        : item === "TEXT_BASS_TAB"
-        ? "BASS"
-        : item}
+      {item}
     </a>
   );
 };

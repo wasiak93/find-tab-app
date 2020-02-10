@@ -9,12 +9,20 @@ class App extends Component {
     data: "",
     isSelected: [
       { id: 0, name: "PLAYER", view: "player", selected: false },
-      { id: 1, name: "TEXT_GUITAR_TAB", view: "guitar", selected: false },
+      { id: 1, name: "GUITAR", view: "guitar", selected: false },
       { id: 2, name: "CHORDS", view: "chords", selected: false },
-      { id: 3, name: "TEXT_BASS_TAB", view: "bass", selected: false }
+      { id: 3, name: "BASS", view: "bass", selected: false }
     ],
     selectedTabs: [],
     searchResult: ""
+  };
+
+  convertTabs = tabs => {
+    return tabs.map(t => {
+      if (t.includes("_")) {
+        return t.split("_")[1];
+      } else return t;
+    });
   };
 
   handleInputChange = e => {
@@ -59,15 +67,15 @@ class App extends Component {
         selected: item.id === id ? !item.selected : item.selected
       })
     );
-
     tabs.map(item =>
       item.selected === true ? selectedTabs.push(item.name) : null
     );
     this.setState({
       isSelected: tabs,
-      selectedTabs
+      selectedTabs: this.convertTabs(selectedTabs)
     });
   };
+
   render() {
     return (
       <div className="wrapper">
@@ -83,6 +91,7 @@ class App extends Component {
           data={this.state.data}
           selectedTabs={this.state.selectedTabs}
           result={this.state.searchResult}
+          convert={this.convertTabs}
         />
       </div>
     );
