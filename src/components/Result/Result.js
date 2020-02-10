@@ -2,7 +2,6 @@ import React from "react";
 import List from "./List";
 
 const Result = ({ data, selectedTabs, result, convert }) => {
-  console.log(typeof data);
   let resultHeader = "";
   if (data.length >= 1) {
     resultHeader = (

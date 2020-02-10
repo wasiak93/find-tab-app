@@ -34,12 +34,13 @@ const List = ({ data, selectedTabs, result, convert }) => {
           ? `No results for: ${result} `
           : `Result${number === 1 ? "" : "s"} for:  "${result}" (${number})`}
       </h1>
-      <p className="result__acapit">
-        And for {selectedTabs.length === 1 ? "tab" : "tabs"}:
-        {selectedTabs.length === 0
-          ? " player, guitar, chords, bass"
-          : ` ${selectedTabsText}`}
-      </p>
+      {selectedTabs.length >= 1 ? (
+        <p className="result__acapit">
+          And for {selectedTabs.length === 1 ? "tab" : "tabs"}:
+          {selectedTabsText}
+        </p>
+      ) : null}
+
       <ul>{items}</ul>
     </div>
   );
