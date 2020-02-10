@@ -2,21 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import Header from "./Header/Header";
 import Result from "./Result/Result";
-import { usePromiseTracker } from "react-promise-tracker";
+import LoadingIndicator from "./LoadingIndicator";
 import { trackPromise } from "react-promise-tracker";
-import Loader from "react-loader-spinner";
-
-const LoadingIndicator = props => {
-  const { promiseInProgress } = usePromiseTracker();
-
-  return (
-    promiseInProgress && (
-      <div className="loading">
-        <Loader type="ThreeDots" className="loader" />
-      </div>
-    )
-  );
-};
 
 class App extends Component {
   state = {
