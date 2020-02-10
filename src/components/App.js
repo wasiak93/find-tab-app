@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import Header from "./Header/Header";
 import Result from "./Result/Result";
-import LoadingIndicator from "./LoadingIndicator";
 import { trackPromise } from "react-promise-tracker";
 
 class App extends Component {
@@ -35,6 +34,7 @@ class App extends Component {
   };
 
   handleForm = e => {
+    this.setState({ data: "" });
     e.preventDefault();
     trackPromise(
       fetch(
@@ -91,7 +91,6 @@ class App extends Component {
           selectedButtons={this.state.isSelected}
           click={this.handleTabButton}
         />
-        <LoadingIndicator />
         <Result
           data={this.state.data}
           selectedTabs={this.state.selectedTabs}
