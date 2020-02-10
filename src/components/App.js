@@ -2,6 +2,21 @@ import React, { Component } from "react";
 import "./App.css";
 import Header from "./Header/Header";
 import Result from "./Result/Result";
+import { usePromiseTracker } from "react-promise-tracker";
+import { trackPromise } from "react-promise-tracker";
+import Loader from "react-loader-spinner";
+
+const LoadingIndicator = props => {
+  const { promiseInProgress } = usePromiseTracker();
+
+  return (
+    promiseInProgress && (
+      <div className="loading">
+        <Loader type="ThreeDots" className="loader" />
+      </div>
+    )
+  );
+};
 
 class App extends Component {
   state = {
@@ -14,7 +29,8 @@ class App extends Component {
       { id: 3, name: "BASS", selected: false }
     ],
     selectedTabs: [],
-    searchResult: ""
+    searchResult: "",
+    loading: ""
   };
 
   convertTabs = tabs => {
@@ -33,23 +49,25 @@ class App extends Component {
 
   handleForm = e => {
     e.preventDefault();
-    fetch(
-      `https://www.songsterr.com/a/ra/songs.json?pattern=${this.state.value}`
-    )
-      .then(response => {
-        if (response.ok) return response;
-        throw Error("something gone wrong");
-      })
-      .then(response => response.json())
-      .then(data =>
-        this.setState({
-          data
-        })
+    trackPromise(
+      fetch(
+        `https://www.songsterr.com/a/ra/songs.json?pattern=${this.state.value}`
       )
+        .then(response => {
+          if (response.ok) return response;
+          throw Error("something gone wrong");
+        })
+        .then(response => response.json())
+        .then(data =>
+          this.setState({
+            data
+          })
+        )
 
-      .catch(err => {
-        console.log(err);
-      });
+        .catch(err => {
+          console.log(err);
+        })
+    );
     this.setState({
       searchResult: this.state.value
     });
@@ -86,7 +104,7 @@ class App extends Component {
           selectedButtons={this.state.isSelected}
           click={this.handleTabButton}
         />
-
+        <LoadingIndicator />
         <Result
           data={this.state.data}
           selectedTabs={this.state.selectedTabs}
