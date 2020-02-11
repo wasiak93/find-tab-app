@@ -16,14 +16,7 @@ const List = ({ data, selectedTabs, result, convert }) => {
     });
     if (isValid) {
       number++;
-      return (
-        <ListItem
-          key={item.id}
-          selectedTabs={selectedTabs}
-          convert={convert}
-          {...item}
-        />
-      );
+      return <ListItem key={item.id} convert={convert} {...item} />;
     } else return null;
   });
 

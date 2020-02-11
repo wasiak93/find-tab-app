@@ -4,7 +4,7 @@ import Tab from "./Tab";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMicrophone, faMusic } from "@fortawesome/free-solid-svg-icons";
 
-const ListItem = ({ selectedTabs, title, artist, tabTypes }) => {
+const ListItem = ({ title, artist, tabTypes }) => {
   const tabs = tabTypes.map(item => (
     <Tab key={item} item={item} title={title} artist={artist} />
   ));
